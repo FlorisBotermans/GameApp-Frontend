@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Create a new game!</h1>
+
+  <form [formGroup]="createGameForm">
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Name: </label>
+      <div class="col-10">
+        <input type="text" formControlName="name" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Description: </label>
+      <div class="col-10">
+        <input type="text" formControlName="description" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Platform: </label>
+      <div class="col-10">
+        <input type="text" formControlName="platform" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Category: </label>
+      <div class="col-10">
+        <input type="text" formControlName="category" class="form-control">
+      </div>
+    </div>
+    <button type="button" id="btnSubmit" (click)="createGame();" class="btn btn-primary">Add game</button>&nbsp;
+    <button type="button" routerLink="/games-list" class="btn btn-danger">Go back to games</button><br /> <br />
+  </form>
+</div>

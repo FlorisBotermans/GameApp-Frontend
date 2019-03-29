@@ -1,0 +1,29 @@
+import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Game } from 'src/app/models/game.model';
+
+@Component({
+  selector: 'app-games-detail',
+  templateUrl: './games-detail.component.html',
+  styleUrls: ['./games-detail.component.css']
+})
+export class GamesDetailComponent implements OnInit {
+  private game: Game;
+  private gameSub: Subscription;
+  private gameId: string;
+
+  constructor(private gameService: GameService, private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.route.params.subscribe((params) => this.gameId = params.gameId);
+
+    this.gameService.getGameById(this.gameId);
+    this.gameSub = this.gameService.getGameByIdUpdateListener()
+      .subscribe((gameData: { game: Game }) => {
+        this.game = gameData.game;
+      });
+  }
+
+}

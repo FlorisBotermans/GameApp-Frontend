@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Games</h1>
+
+  <div *ngFor="let game of games" class="card text-white bg-dark mb-3">
+    <div class="card-header">
+      <a routerLink="/details/{{game.gameId}}"><strong>{{game.name}}</strong></a>
+      <button (click)="deleteGame(game.gameId);" type="button" class="btn btn-danger btn-sm">Delete game</button>
+      <button routerLink="/games-update/{{game.gameId}}" class="btn btn-warning btn-sm">Edit game</button>
+    </div>
+
+    <div class="card-body">
+      <p class="card-text">{{game.description}}</p>
+    </div>
+  </div>
+
+  <button routerLink="/games-create" class="btn btn-primary">Add game</button>
+</div>

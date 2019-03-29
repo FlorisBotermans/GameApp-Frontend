@@ -1,0 +1,28 @@
+<div class="container">
+  <h1><a routerLink="/games"><strong><<  </strong></a>{{ game?.name }}</h1>
+
+  <div class="card border-danger mb-3">
+    <div class="card-header"><strong>Name</strong></div>
+    <div class="card-body text-dark">
+      <h5 class="card-title">{{ game?.name }}</h5>
+    </div>
+  </div>
+  <div class="card border-danger mb-3">
+    <div class="card-header"><strong>Description</strong></div>
+    <div class="card-body text-dark">
+      <h5 class="card-title">{{ game?.description }}</h5>
+    </div>
+  </div>
+  <div class="card border-danger mb-3">
+    <div class="card-header"><strong>Platform</strong></div>
+    <div class="card-body text-dark">
+      <h5 class="card-title">{{ game?.platform }}</h5>
+    </div>
+  </div>
+  <div class="card border-danger mb-3">
+    <div class="card-header"><strong>Category</strong></div>
+    <div class="card-body text-dark">
+      <h5 class="card-title">{{ game?.category }}</h5>
+    </div>
+  </div>
+</div>

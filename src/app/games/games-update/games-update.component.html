@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Edit game!</h1>
+
+  <form [formGroup]="updateGameForm">
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Name: </label>
+      <div class="col-10">
+        <input type="text" formControlName="name" class="form-control" placeholder="{{game?.name}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Description: </label>
+      <div class="col-10">
+        <input type="text" formControlName="description" class="form-control" placeholder="{{game?.description}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Platform: </label>
+      <div class="col-10">
+        <input type="text" formControlName="platform" class="form-control" placeholder="{{game?.platform}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Category: </label>
+      <div class="col-10">
+        <input type="text" formControlName="category" class="form-control" placeholder="{{game?.category}}">
+      </div>
+    </div>
+    <button type="button" id="btnSubmit" (click)="updateGame(gameId);" class="btn btn-primary">Update game!</button>&nbsp;
+    <button type="button" routerLink="/games-list" class="btn btn-danger">Go back to games</button><br /> <br />
+  </form>
+
+  <div id="myAlert" class="alert alert-success collapse">
+    <a id="linkClose" class="close">&times;</a>
+    <strong>Game updated:</strong> Game has been updated!
+  </div>
+</div>
