@@ -1,20 +1,20 @@
-<h2>Login to GameApp</h2>
+<div class="container">
+  <h2>Login</h2>
 
-<mat-card>
-  <mat-spinner *ngIf="isLoading"></mat-spinner>
-  <form>
-    <mat-form-field>
-      <input matInput name="email" ngModel type="email" placeholder="E-Mail"/>
-      <mat-error>Please enter a valid email.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput type="password" name="password" ngModel placeholder="Password">
-      <mat-error >Please enter a valid password.</mat-error>
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" type="submit">
-      Login
-    </button>
+  <form [formGroup]="loginForm">
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Email: </label>
+      <div class="col-10">
+        <input type="text" formControlName="email" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Password: </label>
+      <div class="col-10">
+        <input type="password" formControlName="password" class="form-control">
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="login();" [disabled]="!loginForm.valid">Login</button>&nbsp;&nbsp;
+    <strong>Don't have an account yet? <a routerLink="/register">Register!</a></strong>
   </form>
-</mat-card>
+</div>

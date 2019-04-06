@@ -16,16 +16,8 @@ export class GamesUpdateComponent implements OnInit {
   private gameId: string;
   private updateGameForm: FormGroup;
 
-  constructor(private gameService: GameService, private route: ActivatedRoute) { }
-
-  ngOnInit() {
+  constructor(private gameService: GameService, private route: ActivatedRoute) { 
     this.route.params.subscribe((params) => this.gameId = params.gameId);
-
-    this.gameService.getGameById(this.gameId);
-    this.gameSub = this.gameService.getGameByIdUpdateListener()
-      .subscribe((gameData: { game: Game }) => {
-        this.game = gameData.game;
-      });
 
     this.updateGameForm = new FormGroup({
       name: new FormControl(null, Validators.required),
@@ -33,6 +25,14 @@ export class GamesUpdateComponent implements OnInit {
       platform: new FormControl(null, Validators.required),
       category: new FormControl(null, Validators.required)
     });
+  }
+
+  ngOnInit() {
+    this.gameService.getGameById(this.gameId);
+    this.gameSub = this.gameService.getGameByIdUpdateListener()
+      .subscribe((gameData: { game: Game }) => {
+        this.game = gameData.game;
+      });
   }
 
   updateGame(gameId: string) {

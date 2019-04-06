@@ -14,16 +14,15 @@ export class GamesDetailComponent implements OnInit {
   private gameSub: Subscription;
   private gameId: string;
 
-  constructor(private gameService: GameService, private route: ActivatedRoute) { }
+  constructor(private gameService: GameService, private route: ActivatedRoute) { 
+    this.route.params.subscribe((params) => this.gameId = params.gameId);
+  }
 
   ngOnInit() {
-    this.route.params.subscribe((params) => this.gameId = params.gameId);
-
     this.gameService.getGameById(this.gameId);
     this.gameSub = this.gameService.getGameByIdUpdateListener()
       .subscribe((gameData: { game: Game }) => {
         this.game = gameData.game;
       });
   }
-
 }

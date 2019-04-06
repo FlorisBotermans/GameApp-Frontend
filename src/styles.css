@@ -3,6 +3,10 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 .container {
-    background-color: lightgrey;
-    padding: 5px 35px 40px 35px;
+    background-color: silver;
+    padding: 12px 35px 40px 35px;
+}
+
+h2 {
+    margin-bottom: 25px;
 }

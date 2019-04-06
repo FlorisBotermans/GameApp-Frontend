@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Create a new game!</h1>
+  <h2>Create a new game</h2>
 
   <form [formGroup]="createGameForm">
     <div class="form-group row">
@@ -26,7 +26,7 @@
         <input type="text" formControlName="category" class="form-control">
       </div>
     </div>
-    <button type="button" id="btnSubmit" (click)="createGame();" class="btn btn-primary">Add game</button>&nbsp;
-    <button type="button" routerLink="/games-list" class="btn btn-danger">Go back to games</button><br /> <br />
+    <button class="btn btn-primary" (click)="createGame();" [disabled]="!createGameForm.valid">Add game</button>&nbsp;
+    <button class="btn btn-danger" type="reset" routerLink="/games-list">Go back to games</button>
   </form>
 </div>
