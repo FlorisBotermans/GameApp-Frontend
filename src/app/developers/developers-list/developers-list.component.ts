@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./developers-list.component.css']
 })
 export class DevelopersListComponent implements OnInit {
-  @Input() game: Game;
+  @Input() game: any;
   gameId: string;
   developers: Developer[] = [];
   developerSub: Subscription;
