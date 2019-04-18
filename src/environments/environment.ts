@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://shielded-hamlet-18741.herokuapp.com/'
+  apiUrl: 'https://gameapp-backend.herokuapp.com/'
 };
 
 /*
