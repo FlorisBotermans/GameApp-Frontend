@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./characters-list.component.css']
 })
 export class CharactersListComponent implements OnInit {
-  @Input() game: Game;
+  @Input() game: any;
   gameId: string;
   characters: Character[] = [];
   characterSub: Subscription;
