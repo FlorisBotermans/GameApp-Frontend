@@ -11,11 +11,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./developers-update.component.css']
 })
 export class DevelopersUpdateComponent implements OnInit {
-  private developer: Developer;
-  private developerSub: Subscription;
-  private updateDeveloperForm: FormGroup;
-  private gameId: string;
-  private developerId: string;
+  developer: Developer;
+  developerSub: Subscription;
+  updateDeveloperForm: FormGroup;
+  gameId: string;
+  developerId: string;
 
   constructor(private developerService: DeveloperService, private route: ActivatedRoute) { 
     this.route.params.subscribe(params => this.gameId = params.gameId);

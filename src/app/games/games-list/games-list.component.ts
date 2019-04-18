@@ -9,8 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./games-list.component.css']
 })
 export class GamesListComponent implements OnInit {
-  private games: Game[] = [];
-  private gameSub: Subscription;
+  games: Game[] = [];
+  gameSub: Subscription;
 
   constructor(private gameService: GameService) { }
 

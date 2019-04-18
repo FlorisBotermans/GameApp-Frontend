@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./characters-create.component.css']
 })
 export class CharactersCreateComponent implements OnInit {
-  private createCharacterForm: FormGroup;
-  private gameId: string;
+  createCharacterForm: FormGroup;
+  gameId: string;
 
   constructor(private characterService: CharacterService, private route: ActivatedRoute) { 
     this.route.params.subscribe(params => this.gameId = params.gameId);

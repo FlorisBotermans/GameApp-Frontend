@@ -12,9 +12,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CharactersListComponent implements OnInit {
   @Input() game: Game;
-  private gameId: string;
-  private characters: Character[] = [];
-  private characterSub: Subscription;
+  gameId: string;
+  characters: Character[] = [];
+  characterSub: Subscription;
 
   constructor(private characterService: CharacterService, private route: ActivatedRoute) { 
     this.route.params.subscribe((params) => this.gameId = params.gameId);

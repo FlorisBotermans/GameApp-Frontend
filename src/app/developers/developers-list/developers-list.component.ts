@@ -12,9 +12,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DevelopersListComponent implements OnInit {
   @Input() game: Game;
-  private gameId: string;
-  private developers: Developer[] = [];
-  private developerSub: Subscription;
+  gameId: string;
+  developers: Developer[] = [];
+  developerSub: Subscription;
 
   constructor(private developerService: DeveloperService, private route: ActivatedRoute) { 
     this.route.params.subscribe((params) => this.gameId = params.gameId);

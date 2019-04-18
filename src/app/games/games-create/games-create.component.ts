@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./games-create.component.css']
 })
 export class GamesCreateComponent implements OnInit {
-  private createGameForm: FormGroup;
+  createGameForm: FormGroup;
 
   constructor(private gameService: GameService) { 
     this.createGameForm = new FormGroup({

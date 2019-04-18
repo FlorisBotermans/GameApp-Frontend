@@ -11,11 +11,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./characters-update.component.css']
 })
 export class CharactersUpdateComponent implements OnInit {
-  private character: Character;
-  private characterSub: Subscription;
-  private updateCharacterForm: FormGroup;
-  private gameId: string;
-  private characterId: string;
+  character: Character;
+  characterSub: Subscription;
+  updateCharacterForm: FormGroup;
+  gameId: string;
+  characterId: string;
 
   constructor(private characterService: CharacterService, private route: ActivatedRoute) { 
     this.route.params.subscribe(params => this.gameId = params.gameId);

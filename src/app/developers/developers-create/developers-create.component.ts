@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./developers-create.component.css']
 })
 export class DevelopersCreateComponent implements OnInit {
-  private createDeveloperForm: FormGroup;
-  private gameId: string;
+  createDeveloperForm: FormGroup;
+  gameId: string;
 
   constructor(private developerService: DeveloperService, private route: ActivatedRoute) { 
     this.route.params.subscribe(params => this.gameId = params.gameId);

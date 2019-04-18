@@ -10,9 +10,9 @@ import { Game } from 'src/app/models/game.model';
   styleUrls: ['./games-detail.component.css']
 })
 export class GamesDetailComponent implements OnInit {
-  private game: Game;
-  private gameSub: Subscription;
-  private gameId: string;
+  game: Game;
+  gameSub: Subscription;
+  gameId: string;
 
   constructor(private gameService: GameService, private route: ActivatedRoute) { 
     this.route.params.subscribe((params) => this.gameId = params.gameId);

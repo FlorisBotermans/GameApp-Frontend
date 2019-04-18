@@ -11,10 +11,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./games-update.component.css']
 })
 export class GamesUpdateComponent implements OnInit {
-  private game: Game;
-  private gameSub: Subscription;
-  private gameId: string;
-  private updateGameForm: FormGroup;
+  game: Game;
+  gameSub: Subscription;
+  gameId: string;
+  updateGameForm: FormGroup;
 
   constructor(private gameService: GameService, private route: ActivatedRoute) { 
     this.route.params.subscribe((params) => this.gameId = params.gameId);
