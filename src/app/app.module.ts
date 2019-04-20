@@ -39,7 +39,8 @@ import { DevelopersListComponent } from './developers/developers-list/developers
 import { DevelopersCreateComponent } from './developers/developers-create/developers-create.component';
 import { DevelopersUpdateComponent } from './developers/developers-update/developers-update.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { TokenInterceptorService } from './auth/token-interceptor.service'
+import { HttpTokenInterceptor } from './auth/http-token-interceptor';
+import { HttpErrorInterceptor } from './http-error-interceptor';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { TokenInterceptorService } from './auth/token-interceptor.service'
     DevelopersListComponent,
     DevelopersCreateComponent,
     DevelopersUpdateComponent,
-    RegisterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +85,8 @@ import { TokenInterceptorService } from './auth/token-interceptor.service'
     MatCheckboxModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
