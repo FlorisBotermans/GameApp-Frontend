@@ -15,7 +15,7 @@ export class AuthService {
     this.http.post<any>(`${this.apiUrl}api/register`, formValue)
       .subscribe((response) => {
         this.router.navigate(['login']);
-      });
+      }, (error) => {});
   }
 
   login(formValue: any) {
@@ -23,7 +23,7 @@ export class AuthService {
       .subscribe((response) => {
         localStorage.setItem('token', response.toString());
         this.router.navigate(['games-list']);
-      });
+      }, (error) => {});
   }
 
   logout() {
