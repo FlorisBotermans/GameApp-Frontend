@@ -7,6 +7,6 @@ export interface Game {
     description: string,
     platform: string,
     category: string,
-    developer: Developer,
+    developers: Developer[],
     characters: Character[]
 }
